@@ -6,4 +6,8 @@ FactoryGirl.define do
   sequence :title do |n|
     "Title ##{n}"
   end
+
+  sequence :text do
+    Faker::Lorem.paragraph
+  end
 end

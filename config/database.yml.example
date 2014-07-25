@@ -8,11 +8,11 @@ defaults_development: &defaults_development
   host: localhost
 
 development:
-  database: application_dev
+  database: simple_rails_base_project_dev
   <<: *defaults_development
 
 test:
-  database: application_test
+  database: simple_rails_base_project_test
   <<: *defaults_development
 
 
