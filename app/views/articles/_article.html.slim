@@ -1,0 +1,7 @@
+li
+  h2.title
+    = article.title
+  p.text
+    = article.text.truncate 345
+  .view-more
+    = link_to 'Show more', article

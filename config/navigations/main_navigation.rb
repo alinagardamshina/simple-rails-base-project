@@ -7,7 +7,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.dom_class = 'left'
 
     primary.with_options(if: proc { user_signed_in? }) do |signed_in_user|
-      signed_in_user.item :dashboard, 'Dashboard', root_path
+      signed_in_user.item :dashboard, 'Home', root_path
     end
   end
 end
