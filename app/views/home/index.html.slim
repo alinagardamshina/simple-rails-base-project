@@ -1,4 +1,6 @@
 .row
   .columns
-    ul
+    ul.articles
       = render articles
+    .add-article
+      = link_to 'Add article', [:new, :article]

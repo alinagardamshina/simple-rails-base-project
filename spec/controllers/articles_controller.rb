@@ -20,4 +20,28 @@ describe ArticlesController do
   describe 'GET new' do
     it { should be_success }
   end
+
+  describe 'GET show' do
+    it { should be_success }
+  end
+
+  describe 'GET edit' do
+    it { should be_success }
+  end
+
+  describe 'PATCH update' do
+    let(:article) { create :article, title: 'tilte 1', text: 'text 1' }
+    let(:params) { { title: 'titlt 2', text: 'text 2' } }
+
+    before do
+      patch :update, id: article.id, article: params
+    end
+
+    it { should redirect_to(root_path) }
+
+    it 'update article' do
+      expect(article.title).to eql 'title 2'
+      expect(article.text).to eql 'text 2'
+    end
+  end
 end

@@ -15,7 +15,6 @@ feature 'Show article' do
   scenario 'Show article' do
     show_article_page.load article_id: article.id
 
-    expect(Article.find_by(title: 'test')).to_not eql nil
     expect(show_article_page.title_text).to eql 'test'
     expect(show_article_page.text_text).to eql 'test text'
   end
