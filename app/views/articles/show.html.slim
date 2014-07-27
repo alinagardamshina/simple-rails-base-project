@@ -2,5 +2,10 @@
   .columns
     h2.title = article.title
     p.text = article.text
-  .back
-    = link_to 'Back', :back
+  .links
+    .edit
+      = link_to 'Edit', [:edit, article]
+    .remove
+      = link_to 'Remove', article, method: :delete
+    .back
+      = link_to 'Back', :back
