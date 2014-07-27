@@ -1,10 +1,9 @@
 require 'github/markdown'
 
 class CommentsController < ApplicationController
-  expose(:articles, ancestor: :current_user)
   expose(:article)
-  expose(:comments, ancestor: :article) do |default|
-    default.where user_id: current_user.id
+  expose(:comments, ancestor: :article) do |scope|
+    scope.where user_id: current_user.id
   end
   expose(:comment, attributes: :comment_attributes)
 
