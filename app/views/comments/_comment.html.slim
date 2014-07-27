@@ -1,0 +1,10 @@
+li
+  p.text
+    = comment.text
+  .user
+    ' created by
+    = article.user_email
+    '  at
+    = article.created_at.to_s :short
+  .view-more
+    = link_to 'Show more', article

@@ -2,10 +2,21 @@
   .columns
     h2.title = article.title
     p.text = article.text
+    .user
+      ' created by
+      = article.user_email
+      '  at
+      = article.created_at.to_s :short
   .links
-    .edit
-      = link_to 'Edit', [:edit, article]
-    .remove
-      = link_to 'Remove', article, method: :delete
-    .back
+    - if current_user_article?
+      .edit.link
+        = link_to 'Edit', [:edit, article]
+      .remove.link
+        = link_to 'Remove', article, method: :delete
+    .back.link
       = link_to 'Back', :back
+  h2 Comments
+  ul.comments
+    = render comments
+  .add-comment
+    = render 'comments/form'
