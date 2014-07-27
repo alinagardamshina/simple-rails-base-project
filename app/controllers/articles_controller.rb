@@ -9,6 +9,11 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    article.save
+    redirect_to root_path
+  end
+
   private
 
   def article_attributes
