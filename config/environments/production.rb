@@ -76,5 +76,5 @@ Rails.application.configure do
 
   # Application specific options
   #
-  config.host = 'fs-rails-base.herokuapp.com'
+  config.host = 'simple-rails-base-project.herokuapp.com'
 end
