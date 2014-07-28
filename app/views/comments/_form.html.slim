@@ -1,0 +1,6 @@
+= form_tag article_comments_path(article), method: :post, class: 'simple-form create_comment' do |f|
+  .form-inputs
+    .input.text.required.comment_text
+      = text_area_tag 'comment[text]', nil, required: true, class: 'text'
+  .form-actions
+    = submit_tag 'ok', class: 'button'
